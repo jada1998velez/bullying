@@ -4,4 +4,4 @@ COPY src/* /app/
 COPY model/bullying_model.pkl /app/model/bullying_model.pkl
 
 WORKDIR /app
-ENTRYPOINT [ "streamlit", "run", "joblib" "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT [ "streamlit", "run", "app.py"]
