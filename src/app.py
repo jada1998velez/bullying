@@ -40,5 +40,6 @@ if st.button('Enviar'):
     data = data.replace(["Hombre", "Mujer"], [1, 0])
     data = data.replace(["Sí", "No"], [1, 0])
     data = data.replace({'Nunca':1, 'Raramente':2, 'A veces':3,'La mayor parte del tiempo':4,'Siempre':5})
-    prediction = pkl.predict(data)[0]
+    prediccion = pkl.predict(data)[0]
+    st.write(prediccion)
 
