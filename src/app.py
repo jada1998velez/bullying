@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
-# import joblib
+import joblib
 
-# pkl = joblib.load("model/bullying_model.pkl")
+pkl = joblib.load("model/bullying_model.pkl")
 
 st.title('¿Eres víctima de bullying?')
 
@@ -32,7 +32,7 @@ clases = st.radio('¿Has faltado a clases o a la escuela sin permiso en los últ
 subpeso = st.radio('¿Has experimentado subpeso en algún momento?', ["Sí", "No"], index=None, key=6)
 sobrepeso = st.radio('¿Has experimentado sobrepeso en algún momento?', ["Sí", "No"], index=None, key=7)
 obesidad = st.radio('¿Has experimentado obesidad en algún momento?', ["Sí", "No"], index=None, key=8)
-'''
+
 if st.button('Enviar'):
 
     data =pd.DataFrame([[edad, sexo, agresion, peleas, frecuenciaSoledad, amigos,asistencia, amabilidad, padres, soledad,clases,subpeso, sobrepeso, obesidad]], 
@@ -41,4 +41,4 @@ if st.button('Enviar'):
     data = data.replace(["Sí", "No"], [1, 0])
     data = data.replace({'Nunca':1, 'Raramente':2, 'A veces':3,'La mayor parte del tiempo':4,'Siempre':5})
     prediction = pkl.predict(data)[0]
-    '''
+
